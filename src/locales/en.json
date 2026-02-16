@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "contact": "Contact",
+    "projects": "Projects",
+    "companies": "Companies & Teams",
+    "about": "About Me",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "available": "Available for New Projects",
+    "architect": "The Architect",
+    "fullName": "Abdusamad Abdullaxanov",
+    "foreignName": "Mateo Versace",
+    "title": "Crafting Robust Backend Systems",
+    "description": "Young, hardworking, ambitious, and adaptable Backend Developer with 3+ years of experience, Student and Instructor",
+    "viewProjects": "View Projects",
+    "aboutMe": "About Me",
+    "backendArchitecture": "Backend Architecture",
+    "dataIntegrity": "Data Integrity",
+    "cleanCode": "Clean Code",
+    "identity": "Identity",
+    "role": "Software Architect",
+    "showMoreSkills": "Show More",
+    "showLessSkills": "Show Less"
+  },
+  "services": {
+    "pythonBackend": {
+      "title": "Python Backend",
+      "description": "Architecting high-performance APIs and microservices using Django REST, FastAPI, and Flask. Focusing on scalability and efficient data processing."
+    },
+    "devopsCloud": {
+      "title": "DevOps & Cloud",
+      "description": "Implementing CI/CD pipelines, containerization with Docker/Kubernetes, and cloud infrastructure management for reliable system operation."
+    },
+    "iotEngineering": {
+      "title": "IoT Engineering",
+      "description": "Designing IoT solutions and systems for connected devices, enabling real-time data collection and device management."
+    },
+    "mentorship": {
+      "title": "Mentorship",
+      "description": "Teaching and guiding developers, sharing best practices, and helping to develop technical skills in software engineering."
+    }
+  },
+  "companies": {
+    "title": "Companies & Teams",
+    "description": "Explore my professional journey across innovative companies and collaborative teams, building cutting-edge solutions and leading impactful projects.",
+    "viewAll": "View All",
+    "website": "Website",
+    "projects": "Projects",
+    "showProjects": "Show Projects",
+    "hideProjects": "Hide Projects",
+    "skills": "Key Skills",
+    "partTime": "Part-time",
+    "fullTime": "Full-time",
+    "internship": "Internship",
+    "present": "Present",
+    "viewWebsite": "View Website"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A passionate developer focused on backend development and education",
+    "intro": "Hello! I'm",
+    "description": "I'm a software engineer specializing in Python Backend and DevOps. My journey started with a curiosity for programming and has evolved into building scalable systems and teaching others.",
+    "age": "Age",
+    "years": "years old",
+    "location": "Location",
+    "birthplace": "Birthplace",
+    "currentlyLearning": "Currently Learning",
+    "interests": "Interests",
+    "education": "Education",
+    "certifications": "Certifications",
+    "degree": "Bachelor's in Software Engineering",
+    "university": "Namangan Institute of Engineering and Technology",
+    "graduationYear": "Graduation Year",
+    "interests_list": {
+      "backend": "Backend Architecture",
+      "devops": "DevOps & Automation",
+      "ai": "Artificial Intelligence & ML",
+      "teaching": "Teaching & Mentorship",
+      "opensource": "Open Source Contribution",
+      "cloud": "Cloud Technologies"
+    },
+    "learning": {
+      "microservices": "Microservices Architecture",
+      "kubernetes": "Kubernetes & Containerization",
+      "ai": "AI Integration",
+      "scalability": "Scalable Systems"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's connect and create something amazing together!",
+    "phone": "Phone",
+    "email": "Email",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "getInTouch": "Get In Touch",
+    "reachOut": "Feel free to reach out through any of these channels"
+  },
+  "footer": {
+    "builtBy": "Built by",
+    "rights": "All rights reserved.",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

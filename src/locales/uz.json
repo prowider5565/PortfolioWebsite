@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "contact": "Aloqa",
+    "projects": "Loyihalar",
+    "companies": "Kompaniyalar va Jamoalar",
+    "about": "Men haqimda",
+    "hireMe": "Meni yollang"
+  },
+  "hero": {
+    "available": "Yangi loyihalar va hamkorlik uchun ochiq",
+    "architect": "Arxitektor",
+    "fullName": "Abdusamad Abdullaxanov",
+    "foreignName": "Mateo Versace",
+    "title": "Mustahkam Backend Tizimlarini Yaratish",
+    "description": "3+ yil ish tajribaga ega yosh, mehnatkash, chiqishimli, moslashuvchan Backend dasturchisi, Student va o'qituvchi",
+    "viewProjects": "Loyihalarni ko'rish",
+    "aboutMe": "Men haqimda",
+    "backendArchitecture": "Backend Arxitekturasi",
+    "dataIntegrity": "Ma'lumotlar Yaxlitligi",
+    "cleanCode": "Toza Kod",
+    "identity": "Shaxs",
+    "role": "Dasturiy Ta'minot Arxitektori",
+    "showMoreSkills": "Ko'proq ko'rsatish",
+    "showLessSkills": "Kamroq ko'rsatish"
+  },
+  "services": {
+    "pythonBackend": {
+      "title": "Python Backend",
+      "description": "Django REST, FastAPI va Flask yordamida yuqori samarali API'lar va mikroservislarni loyihalash. Kengaytiriluvchanlik va samarali ma'lumotlarni qayta ishlashga e'tibor qaratish."
+    },
+    "devopsCloud": {
+      "title": "DevOps va Bulut",
+      "description": "CI/CD quvurlari, Docker/Kubernetes bilan konteynerlashtirish va ishonchli tizim ishlashi uchun bulut infratuzilmasini boshqarishni amalga oshirish."
+    },
+    "iotEngineering": {
+      "title": "IoT Muhandisligi",
+      "description": "Ulangan qurilmalar uchun IoT yechimlari va tizimlarini loyihalash, real vaqtda ma'lumotlarni yig'ish va qurilmalarni boshqarishni ta'minlash."
+    },
+    "mentorship": {
+      "title": "Murabbiylik",
+      "description": "Dasturchilarni o'qitish va yo'naltirish, eng yaxshi amaliyotlarni baham ko'rish va texnik ko'nikmalarni rivojlantirishda yordam berish."
+    }
+  },
+  "companies": {
+    "title": "Kompaniyalar va Jamoalar",
+    "description": "Mening innovatsion kompaniyalar va hamkorlikdagi jamoalardagi professional yo'lim bilan tanishing, ilg'or yechimlar yaratish va ta'sirli loyihalarga rahbarlik qilish.",
+    "viewAll": "Barchasini ko'rish",
+    "website": "Veb-sayt",
+    "projects": "Loyihalar",
+    "showProjects": "Loyihalarni ko'rsatish",
+    "hideProjects": "Loyihalarni yashirish",
+    "skills": "Asosiy Ko'nikmalar",
+    "partTime": "Yarim kunlik",
+    "fullTime": "To'liq kunlik",
+    "internship": "Amaliyot",
+    "present": "Hozir",
+    "viewWebsite": "Veb-saytni ko'rish"
+  },
+  "about": {
+    "title": "Men haqimda",
+    "subtitle": "Backend dasturlash va ta'limga ishtiyoqli dasturchi",
+    "intro": "Salom! Men",
+    "description": "Men Python Backend va DevOps sohasida ixtisoslashgan dasturiy ta'minot muhandisiman. Mening yo'lim dasturlashga qiziqishdan boshlanib, hozirda kengaytiriladigan tizimlar qurish va boshqalarni o'rgatishga qadar rivojlandi.",
+    "age": "Yosh",
+    "years": "yosh",
+    "location": "Joylashuv",
+    "birthplace": "Tug'ilgan joy",
+    "currentlyLearning": "Hozir o'rganayotgan",
+    "interests": "Qiziqishlar",
+    "education": "Ta'lim",
+    "certifications": "Sertifikatlar",
+    "degree": "Dasturiy ta'minot muhandisligi bo'yicha bakalavr",
+    "university": "Namangan Muhandislik-Texnologiya Instituti",
+    "graduationYear": "Bitirish yili",
+    "interests_list": {
+      "backend": "Backend arxitekturasi",
+      "devops": "DevOps va avtomatlashtirish",
+      "ai": "Sun'iy intellekt va mashinani o'rganish",
+      "teaching": "O'qitish va murabbiylik",
+      "opensource": "Ochiq manba hissasi",
+      "cloud": "Bulut texnologiyalari"
+    },
+    "learning": {
+      "microservices": "Mikroservislar arxitekturasi",
+      "kubernetes": "Kubernetes va konteynerlashtirish",
+      "ai": "AI integratsiyasi",
+      "scalability": "Kengaytiriladigan tizimlar"
+    }
+  },
+  "contact": {
+    "title": "Bog'lanish",
+    "subtitle": "Men bilan bog'laning va keling, birgalikda ajoyib narsalarni yarataylik!",
+    "phone": "Telefon",
+    "email": "Email",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "getInTouch": "Bog'lanish",
+    "reachOut": "Menga quyidagi kanallar orqali murojaat qilishingiz mumkin"
+  },
+  "footer": {
+    "builtBy": "Tomonidan qurilgan",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}
