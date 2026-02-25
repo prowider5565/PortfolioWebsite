@@ -28,19 +28,20 @@ const About: React.FC = () => {
 
   const certifications = [
     {
-      title: 'Python Backend Development',
-      issuer: 'IT Park Uzbekistan',
-      year: '2023',
+      key: 'pythonProgramming',
+      image: '/images/certificates/PythonProgramming.jpg',
     },
     {
-      title: 'Django REST Framework',
-      issuer: 'Online Course',
-      year: '2023',
+      key: 'computerLiteracy',
+      image: '/images/certificates/ComputerLiteracy.jpg',
     },
     {
-      title: 'Docker & Kubernetes Fundamentals',
-      issuer: 'Cloud Academy',
-      year: '2024',
+      key: 'ideathon',
+      image: '/images/certificates/Ideathon.jpg',
+    },
+    {
+      key: 'letterOfAppreciation',
+      image: '/images/certificates/LetterOfAppreciation.jpg',
     },
   ];
 
@@ -184,12 +185,12 @@ const About: React.FC = () => {
 
               <Card className="bg-card/50 backdrop-blur-sm border-border/50">
                 <CardHeader>
-                  <CardTitle className="text-2xl">{t('about.degree')}</CardTitle>
+                  <CardTitle className="text-2xl">{t('about.university')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <p className="text-lg text-muted-foreground">{t('about.university')}</p>
+                  <p className="text-lg text-muted-foreground">{t('about.degree')}</p>
                   <p className="text-sm text-muted-foreground">
-                    {t('about.graduationYear')}: 2026
+                    {t('about.graduationYear')}: {t('about.graduationYearValue')}
                   </p>
                 </CardContent>
               </Card>
@@ -211,12 +212,19 @@ const About: React.FC = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {certifications.map((cert, index) => (
                   <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300">
+                    <CardContent className="p-4 pb-0">
+                      <img
+                        src={cert.image}
+                        alt={t(`about.certifications_list.${cert.key}.title`)}
+                        className="w-full h-44 object-cover rounded-xl border border-border/60"
+                      />
+                    </CardContent>
                     <CardHeader>
-                      <CardTitle className="text-lg">{cert.title}</CardTitle>
+                      <CardTitle className="text-lg">{t(`about.certifications_list.${cert.key}.title`)}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-1">
-                      <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                      <p className="text-xs text-muted-foreground">{cert.year}</p>
+                      <p className="text-sm text-muted-foreground">{t(`about.certifications_list.${cert.key}.issuer`)}</p>
+                      <p className="text-xs text-muted-foreground">{t(`about.certifications_list.${cert.key}.year`)}</p>
                     </CardContent>
                   </Card>
                 ))}

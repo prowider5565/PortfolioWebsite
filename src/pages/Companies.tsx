@@ -11,7 +11,7 @@ import { ExternalLink, ChevronDown, ChevronUp, Calendar, Briefcase, Code } from 
 import { workExperiences } from '@/data/workExperience';
 
 const Companies: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [openProjects, setOpenProjects] = useState<Record<string, boolean>>({});
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
@@ -24,7 +24,12 @@ const Companies: React.FC = () => {
   const formatDate = (dateStr: string) => {
     const [year, month] = dateStr.split('-');
     const date = new Date(Number(year), Number(month) - 1);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    const localeMap: Record<string, string> = {
+      uz: 'uz-UZ',
+      en: 'en-US',
+      ru: 'ru-RU',
+    };
+    return date.toLocaleDateString(localeMap[i18n.language] ?? 'en-US', { year: 'numeric', month: 'short' });
   };
 
   const handleImageClick = (images: string[], index: number) => {
@@ -87,7 +92,9 @@ const Companies: React.FC = () => {
                       <div>
                         <div className="flex items-start justify-between gap-4 mb-3">
                           <div>
-                            <h2 className="text-2xl font-bold text-foreground mb-2">{exp.title}</h2>
+                            <h2 className="text-2xl font-bold text-foreground mb-2">
+                              {t(`companies.experiences.${exp.id}.title`, { defaultValue: exp.title })}
+                            </h2>
                             <div className="flex items-center gap-2 text-muted-foreground text-sm">
                               <Calendar className="w-4 h-4" />
                               <span>
@@ -96,7 +103,9 @@ const Companies: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {t(`companies.experiences.${exp.id}.description`, { defaultValue: exp.description })}
+                        </p>
                       </div>
 
                       {/* Skills */}
@@ -147,7 +156,9 @@ const Companies: React.FC = () => {
                                 className="p-5 rounded-xl bg-secondary/20 border border-border/50 hover:border-primary/50 transition-all"
                               >
                                 <div className="flex items-start justify-between gap-2 mb-2">
-                                  <h5 className="font-bold text-foreground">{project.title}</h5>
+                                  <h5 className="font-bold text-foreground">
+                                    {t(`companies.experiences.${exp.id}.projects.${project.id}.title`, { defaultValue: project.title })}
+                                  </h5>
                                   {project.link && (
                                     <a
                                       href={project.link}
@@ -159,7 +170,11 @@ const Companies: React.FC = () => {
                                     </a>
                                   )}
                                 </div>
-                                <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+                                <p className="text-sm text-muted-foreground mb-3">
+                                  {t(`companies.experiences.${exp.id}.projects.${project.id}.description`, {
+                                    defaultValue: project.description,
+                                  })}
+                                </p>
                                 <div className="flex flex-wrap gap-2">
                                   {project.technologies.map((tech) => (
                                     <Badge key={tech} variant="outline" className="text-xs">

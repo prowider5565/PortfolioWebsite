@@ -61,7 +61,7 @@ export const workExperiences: WorkExperience[] = [
     id: 'datasite-2025',
     title: 'Backend Developer & Instructor',
     company: 'Datasite Academy',
-    companyLogo: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-9nlltn39i22o/conv-9nlm5x2djta8/20260216/file-9nq1n57wc83k.png',
+    companyLogo: '/images/DatasiteLogo.png',
     companyWebsite: 'https://datasite.uz',
     description: 'Teaching students about the core fundamentals of programming and backend development skills while developing medical information systems and educational platforms.',
     keySkills: ['Python', 'Django', 'Teaching', 'Mentorship', 'Backend Architecture', 'PostgreSQL'],
@@ -69,6 +69,7 @@ export const workExperiences: WorkExperience[] = [
     endDate: '2026-02',
     employmentType: 'Full-time',
     gallery: [
+      '/images/DatasiteGallery.png',
       'https://miaoda-conversation-file.s3cdn.medo.dev/user-9nlltn39i22o/conv-9nlm5x2djta8/20260216/file-9nq2bnqxqkw0.jpg',
     ],
     projects: [

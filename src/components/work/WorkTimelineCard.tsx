@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -14,6 +15,7 @@ interface WorkTimelineCardProps {
 }
 
 export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, index }) => {
+  const { t, i18n } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -44,7 +46,12 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
   const formatDate = (dateStr: string) => {
     const [year, month] = dateStr.split('-');
     const date = new Date(Number(year), Number(month) - 1);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    const localeMap: Record<string, string> = {
+      uz: 'uz-UZ',
+      en: 'en-US',
+      ru: 'ru-RU',
+    };
+    return date.toLocaleDateString(localeMap[i18n.language] ?? 'en-US', { year: 'numeric', month: 'short' });
   };
 
   const handleImageClick = (imgIndex: number) => {
@@ -89,7 +96,7 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
                 />
                 <div>
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {experience.title}
+                    {t(`companies.experiences.${experience.id}.title`, { defaultValue: experience.title })}
                   </h3>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Briefcase className="w-4 h-4" />
@@ -116,7 +123,9 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
             </div>
 
             {/* Description */}
-            <p className="text-muted-foreground leading-relaxed">{experience.description}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t(`companies.experiences.${experience.id}.description`, { defaultValue: experience.description })}
+            </p>
 
             {/* Skills */}
             <div className="flex flex-wrap gap-2">
@@ -143,7 +152,7 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
                 <CollapsibleTrigger asChild>
                   <Button variant="outline" className="w-full justify-between group/btn">
                     <span className="font-semibold">
-                      {isProjectsOpen ? 'Hide' : 'Show'} Projects ({experience.projects.length})
+                      {isProjectsOpen ? t('companies.hideProjects') : t('companies.showProjects')} ({experience.projects.length})
                     </span>
                     {isProjectsOpen ? (
                       <ChevronUp className="w-4 h-4 transition-transform" />
@@ -159,7 +168,9 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
                       className="p-4 rounded-lg bg-secondary/20 border border-border/50 hover:border-primary/50 transition-all"
                     >
                       <div className="flex items-start justify-between gap-2">
-                        <h4 className="font-bold text-foreground">{project.title}</h4>
+                        <h4 className="font-bold text-foreground">
+                          {t(`companies.experiences.${experience.id}.projects.${project.id}.title`, { defaultValue: project.title })}
+                        </h4>
                         {project.link && (
                           <a
                             href={project.link}
@@ -171,7 +182,11 @@ export const WorkTimelineCard: React.FC<WorkTimelineCardProps> = ({ experience, 
                           </a>
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground mt-2">{project.description}</p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {t(`companies.experiences.${experience.id}.projects.${project.id}.description`, {
+                          defaultValue: project.description,
+                        })}
+                      </p>
                       <div className="flex flex-wrap gap-2 mt-3">
                         {project.technologies.map((tech) => (
                           <Badge key={tech} variant="outline" className="text-xs">

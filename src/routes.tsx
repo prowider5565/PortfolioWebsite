@@ -23,6 +23,11 @@ const routes: RouteConfig[] = [
     element: <Companies />
   },
   {
+    name: 'Projects',
+    path: '/projects',
+    element: <Companies />
+  },
+  {
     name: 'Contact',
     path: '/contact',
     element: <Contact />

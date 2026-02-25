@@ -11,7 +11,7 @@
     "architect": "The Architect",
     "fullName": "Abdusamad Abdullaxanov",
     "foreignName": "Mateo Versace",
-    "title": "Crafting Robust Backend Systems",
+    "title": "Developer Building Backend Infrastructure for Centralized Web Systems",
     "description": "Young, hardworking, ambitious, and adaptable Backend Developer with 3+ years of experience, Student and Instructor",
     "viewProjects": "View Projects",
     "aboutMe": "About Me",
@@ -44,6 +44,7 @@
   "companies": {
     "title": "Companies & Teams",
     "description": "Explore my professional journey across innovative companies and collaborative teams, building cutting-edge solutions and leading impactful projects.",
+    "journeySubtitle": "A journey through innovative teams and cutting-edge projects",
     "viewAll": "View All",
     "website": "Website",
     "projects": "Projects",
@@ -70,8 +71,31 @@
     "education": "Education",
     "certifications": "Certifications",
     "degree": "Bachelor's in Software Engineering",
-    "university": "Namangan Institute of Engineering and Technology",
+    "university": "Tashkent University of Information Technologies (TUIT)",
     "graduationYear": "Graduation Year",
+    "graduationYearValue": "2029",
+    "certifications_list": {
+      "pythonProgramming": {
+        "title": "Python Programming",
+        "issuer": "Certificate Program",
+        "year": "2023"
+      },
+      "computerLiteracy": {
+        "title": "Computer Literacy",
+        "issuer": "Certificate Program",
+        "year": "2023"
+      },
+      "ideathon": {
+        "title": "Ideathon",
+        "issuer": "Certificate Program",
+        "year": "2024"
+      },
+      "letterOfAppreciation": {
+        "title": "Letter of Appreciation",
+        "issuer": "Certificate Program",
+        "year": "2024"
+      }
+    },
     "interests_list": {
       "backend": "Backend Architecture",
       "devops": "DevOps & Automation",
@@ -89,7 +113,7 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "subtitle": "Let's connect and create something amazing together!",
+    "subtitle": "Let's connect and solve pressing problems together!",
     "phone": "Phone",
     "email": "Email",
     "telegram": "Telegram",

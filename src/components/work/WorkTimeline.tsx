@@ -19,7 +19,7 @@ export const WorkTimeline: React.FC = () => {
             {t('companies.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A journey through innovative teams and cutting-edge projects
+            {t('companies.journeySubtitle')}
           </p>
         </div>
 

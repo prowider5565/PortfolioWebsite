@@ -11,7 +11,7 @@
     "architect": "Arxitektor",
     "fullName": "Abdusamad Abdullaxanov",
     "foreignName": "Mateo Versace",
-    "title": "Mustahkam Backend Tizimlarini Yaratish",
+    "title": "Markazlashgan web tizimlarini backend infrastructurasini tuzuvchi dasturchi",
     "description": "3+ yil ish tajribaga ega yosh, mehnatkash, chiqishimli, moslashuvchan Backend dasturchisi, Student va o'qituvchi",
     "viewProjects": "Loyihalarni ko'rish",
     "aboutMe": "Men haqimda",
@@ -44,6 +44,7 @@
   "companies": {
     "title": "Kompaniyalar va Jamoalar",
     "description": "Mening innovatsion kompaniyalar va hamkorlikdagi jamoalardagi professional yo'lim bilan tanishing, ilg'or yechimlar yaratish va ta'sirli loyihalarga rahbarlik qilish.",
+    "journeySubtitle": "Innovatsion jamoalar va ilg'or loyihalar bo'ylab sayohat",
     "viewAll": "Barchasini ko'rish",
     "website": "Veb-sayt",
     "projects": "Loyihalar",
@@ -54,7 +55,74 @@
     "fullTime": "To'liq kunlik",
     "internship": "Amaliyot",
     "present": "Hozir",
-    "viewWebsite": "Veb-saytni ko'rish"
+    "viewWebsite": "Veb-saytni ko'rish",
+    "experiences": {
+      "techgigs-2025": {
+        "title": "Python bo'yicha Backend Dasturchi",
+        "description": "Techgigs agentligi nomidan Upwork'dagi frilans loyihalariga hissa qo'shib, kengaytiriladigan backend yechimlar ishlab chiqyapman. Zamonaviy Python freymvorklari va bulut infratuzilmasi bilan ishlayman.",
+        "projects": {
+          "mymdcard": {
+            "title": "MyMDCard",
+            "description": "Tibbiyot markazlari uchun bemorlarning shaxsiy ma'lumotlarini saqlash va boshqarishga mo'ljallangan tibbiy axborot platformasi. HIPAA talablariga mos va ixtiyoriy onlayn savdo funksiyasiga ega. Stripe bilan to'lov integratsiyasi qilingan, Hostinger Cloud'ga joylashtirilgan."
+          },
+          "pos-system": {
+            "title": "POS tizimi (Point-of-Sales)",
+            "description": "Savdo markazlaridagi tadbirkorlar uchun oylik va yillik savdo, tranzaksiya, qarz va boshqa jarayonlarni boshqarishga yordam beradigan samarali va dinamik dasturiy yechim."
+          },
+          "goavto": {
+            "title": "GoAvto",
+            "description": "O'zbekiston bozoriga mo'ljallangan avtomobil marketplace va avtosalon platformasi. U transport vositalari haqida batafsil ma'lumot hamda dilerlar bilan bog'lanishni taqdim etadi va mamlakatdagi yetakchi avtomobil axborot platformasiga aylanish uchun investitsiya hamkorlarini izlamoqda."
+          }
+        }
+      },
+      "datasite-2025": {
+        "title": "Backend Dasturchi va O'qituvchi",
+        "description": "Talabalarga dasturlash va backend ishlab chiqishning asosiy tamoyillarini o'rgatish bilan birga, tibbiy axborot tizimlari va ta'lim platformalarini ishlab chiqish.",
+        "projects": {
+          "merrymed": {
+            "title": "MerryMed",
+            "description": "Mavjud tibbiy mahsulotlar va ularning ombordagi miqdori haqida ma'lumot almashishga mo'ljallangan tibbiy axborot veb-sayti."
+          }
+        }
+      },
+      "realsoft-2024": {
+        "title": "Junior Backend Dasturchi",
+        "description": "Bank, tibbiyot klinikalari va mahalliy xizmat bizneslari uchun logistika hamda navbat boshqaruv tizimlarini ishlab chiqdim.",
+        "projects": {
+          "carting-logistics": {
+            "title": "Carting Logistics Service",
+            "description": "Muvofiqlashtirilgan ish jarayonlari boshqaruvi orqali an'anaviy yetkazib berish operatsiyalarini raqamlashtiruvchi logistika yechimi."
+          },
+          "navbatda": {
+            "title": "Navbatda - Navbatni Avtomatlashtirish Xizmati",
+            "description": "Banklar, klinikalar va mahalliy xizmat ko'rsatuvchi bizneslarga mijoz oqimini optimallashtirish hamda operatsion yukni kamaytirishga yordam beradigan raqamli navbat boshqaruv tizimi."
+          }
+        }
+      },
+      "fazo-2023": {
+        "title": "Junior Python Backend Dasturchi va Yordamchi AI Dasturchi",
+        "description": "Xavfsiz kuzatuv tizimlari va avtomatik baholash imkoniyatiga ega kompleks raqamli imtihon platformalarini yaratdim.",
+        "projects": {
+          "oson-test": {
+            "title": "Oson Test",
+            "description": "O'qituvchilarga testlarni veb, mobil va Telegram interfeyslari orqali yaratish, tarqatish va boshqarish imkonini beruvchi, avtomatik baholash hamda sertifikat generatsiyasini ta'minlaydigan raqamli imtihon platformasi."
+          },
+          "face-id-surveillance": {
+            "title": "Face ID Kuzatuv Tizimi",
+            "description": "Namangan viloyatidagi harbiy obyektlar uchun Face ID asosidagi xavfsiz kuzatuv va davomat tizimini ishlab chiqdim. Tizim xodimlarning kirish-chiqishini avtomatik kuzatadi hamda kunlik, oylik va yillik hisobotlarni taqdim etadi. Maksimal xavfsizlik uchun lokal infratuzilmada joylashtirilgan."
+          },
+          "suzani-ecommerce": {
+            "title": "Suzani",
+            "description": "Namangandagi mahalliy mijozlar uchun onlayn savdo tajribasini yaxshilashga qaratilgan e-commerce xizmati. Payze to'lov shlyuzi bilan integratsiya qilingan."
+          }
+        }
+      },
+      "it-school-2022": {
+        "title": "Yordamchi Python Dasturlash O'qituvchisi",
+        "description": "IT o'qituvchilariga Python dasturlashni o'rgatishda yordam berdim, Pythonning sodda sintaksisini tushuntirdim va Flask hamda Django REST yordamida minimal veb-backend servislar yaratishni o'rgatdim.",
+        "projects": {}
+      }
+    }
   },
   "about": {
     "title": "Men haqimda",
@@ -69,9 +137,32 @@
     "interests": "Qiziqishlar",
     "education": "Ta'lim",
     "certifications": "Sertifikatlar",
-    "degree": "Dasturiy ta'minot muhandisligi bo'yicha bakalavr",
-    "university": "Namangan Muhandislik-Texnologiya Instituti",
+    "degree": "Dasturiy injiniring sohasi bo'yicha bakalavr",
+    "university": "Toshkent Axborot Texnologiyalari Universiteti (TATU)",
     "graduationYear": "Bitirish yili",
+    "graduationYearValue": "2029",
+    "certifications_list": {
+      "pythonProgramming": {
+        "title": "Python dasturlash",
+        "issuer": "Sertifikat dasturi",
+        "year": "2023"
+      },
+      "computerLiteracy": {
+        "title": "Kompyuter savodxonligi",
+        "issuer": "Sertifikat dasturi",
+        "year": "2023"
+      },
+      "ideathon": {
+        "title": "Ideathon",
+        "issuer": "Sertifikat dasturi",
+        "year": "2024"
+      },
+      "letterOfAppreciation": {
+        "title": "Tashakkurnoma",
+        "issuer": "Sertifikat dasturi",
+        "year": "2024"
+      }
+    },
     "interests_list": {
       "backend": "Backend arxitekturasi",
       "devops": "DevOps va avtomatlashtirish",
@@ -89,7 +180,7 @@
   },
   "contact": {
     "title": "Bog'lanish",
-    "subtitle": "Men bilan bog'laning va keling, birgalikda ajoyib narsalarni yarataylik!",
+    "subtitle": "Men bilan bog'laning va keling, birgalikda dolzarb muammolarga yechim topaylik!",
     "phone": "Telefon",
     "email": "Email",
     "telegram": "Telegram",

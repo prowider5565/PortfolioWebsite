@@ -12,7 +12,7 @@ import { Menu, Globe } from 'lucide-react';
 
 const navItems = [
   { name: 'nav.contact', href: '/contact' },
-  { name: 'nav.projects', href: '#' },
+  { name: 'nav.projects', href: '/projects' },
   { name: 'nav.companies', href: '/companies' },
   { name: 'nav.about', href: '/about' },
 ];

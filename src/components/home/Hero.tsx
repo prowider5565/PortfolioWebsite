@@ -141,12 +141,14 @@ export const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
-              <Button size="lg" className="h-14 px-10 text-lg font-semibold group rounded-full">
-                {t('hero.viewProjects')}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="h-14 px-10 text-lg font-semibold group rounded-full" asChild>
+                <a href="/projects">
+                  {t('hero.viewProjects')}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold border-border hover:bg-secondary rounded-full">
-                {t('hero.aboutMe')}
+              <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold border-border hover:bg-secondary rounded-full" asChild>
+                <a href="/about">{t('hero.aboutMe')}</a>
               </Button>
             </div>
 
