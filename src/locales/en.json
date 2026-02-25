@@ -94,6 +94,11 @@
         "title": "Letter of Appreciation",
         "issuer": "Certificate Program",
         "year": "2024"
+      },
+      "ielts": {
+        "title": "IELTS",
+        "issuer": "IELTS Certificate Program",
+        "year": "2026"
       }
     },
     "interests_list": {
@@ -109,7 +114,9 @@
       "kubernetes": "Kubernetes & Containerization",
       "ai": "AI Integration",
       "scalability": "Scalable Systems"
-    }
+    },
+    "biography": "Biography",
+    "closeCertificate": "Close"
   },
   "contact": {
     "title": "Get In Touch",

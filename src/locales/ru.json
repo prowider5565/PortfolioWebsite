@@ -161,6 +161,11 @@
         "title": "Благодарственное письмо",
         "issuer": "Сертификационная программа",
         "year": "2024"
+      },
+      "ielts": {
+        "title": "IELTS",
+        "issuer": "IELTS Certificate Program",
+        "year": "2026"
       }
     },
     "interests_list": {
@@ -176,7 +181,9 @@
       "kubernetes": "Kubernetes и контейнеризация",
       "ai": "Интеграция AI",
       "scalability": "Масштабируемые системы"
-    }
+    },
+    "biography": "Biography",
+    "closeCertificate": "Close"
   },
   "contact": {
     "title": "Связаться",

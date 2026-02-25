@@ -161,6 +161,11 @@
         "title": "Tashakkurnoma",
         "issuer": "Sertifikat dasturi",
         "year": "2024"
+      },
+      "ielts": {
+        "title": "IELTS",
+        "issuer": "IELTS sertifikati",
+        "year": "2026"
       }
     },
     "interests_list": {
@@ -176,7 +181,9 @@
       "kubernetes": "Kubernetes va konteynerlashtirish",
       "ai": "AI integratsiyasi",
       "scalability": "Kengaytiriladigan tizimlar"
-    }
+    },
+    "biography": "Biografiya",
+    "closeCertificate": "Yopish"
   },
   "contact": {
     "title": "Bog'lanish",

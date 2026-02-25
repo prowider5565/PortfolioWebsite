@@ -1,5 +1,6 @@
 import Home from './pages/Home';
 import Companies from './pages/Companies';
+import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import type { ReactNode } from 'react';
@@ -25,7 +26,7 @@ const routes: RouteConfig[] = [
   {
     name: 'Projects',
     path: '/projects',
-    element: <Companies />
+    element: <Projects />
   },
   {
     name: 'Contact',

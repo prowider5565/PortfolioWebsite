@@ -5,8 +5,14 @@ import { workExperiences } from '@/data/workExperience';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-export const WorkTimeline: React.FC = () => {
+interface WorkTimelineProps {
+  limit?: number;
+}
+
+export const WorkTimeline: React.FC<WorkTimelineProps> = ({ limit }) => {
   const { t } = useTranslation();
+  const experiencesToShow = typeof limit === 'number' ? workExperiences.slice(0, limit) : workExperiences;
+  const showViewAllButton = typeof limit === 'number' ? workExperiences.length > limit : true;
 
   return (
     <section className="py-20 bg-background relative overflow-hidden">
@@ -24,19 +30,21 @@ export const WorkTimeline: React.FC = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {workExperiences.map((experience, index) => (
+          {experiencesToShow.map((experience, index) => (
             <WorkTimelineCard key={experience.id} experience={experience} index={index} />
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="group" asChild>
-            <a href="/companies">
-              {t('companies.viewAll')}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </div>
+        {showViewAllButton && (
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="group" asChild>
+              <a href="/companies">
+                {t('companies.viewAll')}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, BookOpen, Award, Heart, Lightbulb, GraduationCap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { MapPin, Calendar, GraduationCap, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+  const [selectedCertificate, setSelectedCertificate] = useState<null | { key: string; image: string }>(null);
 
-  const profileImage = 'https://miaoda-conversation-file.s3cdn.medo.dev/user-9nlltn39i22o/conv-9nlm5x2djta8/20260216/file-9nm8vnfi3668.jpg';
+  const birthDate = new Date(2005, 0, 1);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  if (!hasHadBirthdayThisYear) {
+    age -= 1;
+  }
 
-  const interests = [
-    { key: 'backend', icon: '🏗️' },
-    { key: 'devops', icon: '⚙️' },
-    { key: 'ai', icon: '🤖' },
-    { key: 'teaching', icon: '👨‍🏫' },
-    { key: 'opensource', icon: '💻' },
-    { key: 'cloud', icon: '☁️' },
-  ];
-
-  const learningTopics = [
-    { key: 'microservices', color: 'bg-blue-500/10 text-blue-500 border-blue-500/20' },
-    { key: 'kubernetes', color: 'bg-purple-500/10 text-purple-500 border-purple-500/20' },
-    { key: 'ai', color: 'bg-green-500/10 text-green-500 border-green-500/20' },
-    { key: 'scalability', color: 'bg-orange-500/10 text-orange-500 border-orange-500/20' },
-  ];
+  const profileImage =
+    'https://miaoda-conversation-file.s3cdn.medo.dev/user-9nlltn39i22o/conv-9nlm5x2djta8/20260216/file-9nm8vnfi3668.jpg';
 
   const certifications = [
     {
@@ -43,18 +40,22 @@ const About: React.FC = () => {
       key: 'letterOfAppreciation',
       image: '/images/certificates/LetterOfAppreciation.jpg',
     },
+    {
+      key: 'ielts',
+      image: '/images/certificates/IELTS.png',
+    },
   ];
+  const ieltsCertificate = certifications.find((cert) => cert.key === 'ielts');
+  const regularCertificates = certifications.filter((cert) => cert.key !== 'ielts');
 
   return (
     <MainLayout>
       <div className="relative overflow-hidden">
-        {/* Hero Section */}
         <section className="relative py-20 md:py-32 border-b border-border/20">
           <div className="absolute top-0 left-0 w-full h-full tech-grid opacity-5 pointer-events-none" />
           <div className="container relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col md:flex-row items-center gap-12">
-                {/* Profile Image */}
                 <div className="relative group flex-shrink-0">
                   <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity" />
                   <img
@@ -64,7 +65,6 @@ const About: React.FC = () => {
                   />
                 </div>
 
-                {/* Profile Info */}
                 <div className="flex-1 space-y-6 text-center md:text-left">
                   <div>
                     <p className="text-primary font-mono tracking-widest uppercase text-sm font-bold mb-2">
@@ -78,17 +78,19 @@ const About: React.FC = () => {
                     </h2>
                   </div>
 
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                    {t('about.description')}
-                  </p>
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">{t('about.biography')}</h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{t('about.description')}</p>
+                  </div>
 
-                  {/* Quick Info */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     <div className="flex items-center gap-3 justify-center md:justify-start">
                       <Calendar className="w-5 h-5 text-primary" />
                       <div>
                         <p className="text-sm text-muted-foreground">{t('about.age')}</p>
-                        <p className="font-semibold">22 {t('about.years')}</p>
+                        <p className="font-semibold">
+                          {age} {t('about.years')}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 justify-center md:justify-start">
@@ -105,74 +107,72 @@ const About: React.FC = () => {
                         <p className="font-semibold">Namangan, Uzbekistan</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 justify-center md:justify-start">
-                      <Lightbulb className="w-5 h-5 text-primary" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">{t('about.currentlyLearning')}</p>
-                        <p className="font-semibold">Microservices & AI</p>
-                      </div>
-                    </div>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Interests Section */}
-        <section className="py-20">
-          <div className="container">
-            <div className="max-w-6xl mx-auto space-y-12">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
-                  <Heart className="w-8 h-8 text-primary" />
-                  {t('about.interests')}
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {interests.map((interest) => (
-                  <Card key={interest.key} className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl">{interest.icon}</span>
-                        <p className="text-lg font-semibold">{t(`about.interests_list.${interest.key}`)}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Currently Learning Section */}
-        <section className="py-20 bg-secondary/20">
+        <section className="py-16">
           <div className="container">
             <div className="max-w-6xl mx-auto space-y-8">
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-2">
                 <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
-                  <BookOpen className="w-8 h-8 text-primary" />
-                  {t('about.currentlyLearning')}
+                  <Award className="w-8 h-8 text-primary" />
+                  {t('about.certifications')}
                 </h2>
               </div>
+              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {regularCertificates.map((cert) => (
+                    <Card key={cert.key} className="bg-card/50 backdrop-blur-sm border-border/50">
+                      <CardContent className="p-3 space-y-3">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedCertificate(cert)}
+                          className="w-full text-left cursor-pointer"
+                        >
+                          <img
+                            src={cert.image}
+                            alt={t(`about.certifications_list.${cert.key}.title`)}
+                            className="w-full h-44 md:h-52 object-cover rounded-xl border border-border/60"
+                          />
+                          <p className="pt-3 text-sm font-semibold">
+                            {t(`about.certifications_list.${cert.key}.title`)}
+                          </p>
+                        </button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
 
-              <div className="flex flex-wrap justify-center gap-4">
-                {learningTopics.map((topic) => (
-                  <Badge
-                    key={topic.key}
-                    variant="outline"
-                    className={`px-6 py-3 text-base font-semibold border-2 ${topic.color}`}
-                  >
-                    {t(`about.learning.${topic.key}`)}
-                  </Badge>
-                ))}
+                {ieltsCertificate && (
+                  <Card className="bg-card/50 backdrop-blur-sm border-border/50 h-full">
+                    <CardContent className="p-3 h-full">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedCertificate(ieltsCertificate)}
+                        className="w-full text-left cursor-pointer h-full flex flex-col"
+                      >
+                        <img
+                          src={ieltsCertificate.image}
+                          alt={t(`about.certifications_list.${ieltsCertificate.key}.title`)}
+                          className="w-full flex-1 min-h-0 object-cover rounded-xl border border-border/60"
+                        />
+                        <p className="pt-3 text-sm font-semibold shrink-0">
+                          {t(`about.certifications_list.${ieltsCertificate.key}.title`)}
+                        </p>
+                      </button>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Education Section */}
         <section className="py-20">
           <div className="container">
             <div className="max-w-6xl mx-auto space-y-12">
@@ -187,52 +187,70 @@ const About: React.FC = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">{t('about.university')}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-2">
-                  <p className="text-lg text-muted-foreground">{t('about.degree')}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {t('about.graduationYear')}: {t('about.graduationYearValue')}
-                  </p>
+                <CardContent>
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="space-y-3">
+                      <p className="text-lg text-muted-foreground">{t('about.degree')}</p>
+                      <p className="text-sm font-medium text-primary">September 2025 - May 2030</p>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Program Status:</span> In progress
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Faculty:</span> Zarafshon, Navoi
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">Focus Areas:</span> Backend, Machine learning,
+                        Distributed Systems, Data Analytics
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {t('about.graduationYear')}: {t('about.graduationYearValue')}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed max-w-[64ch]">
+                        Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti (TATU)
+                        1955-yilda tashkil etilgan Oʻzbekistonning Toshkent shahridagi yetakchi davlat
+                        universitetidir. U dasturiy taʼminot muhandisligi, kiberxavfsizlik va telekommunikatsiya
+                        sohalariga ixtisoslashgan AKT sohasidagi yetakchi muassasa boʻlib, mintaqadagi eng yaxshi
+                        universitetlar qatoridan joy olgan.
+                      </p>
+                    </div>
+                    <img
+                      src="/images/logo/tatu.png"
+                      alt="TATU logo"
+                      className="w-80 h-80 md:w-[25rem] md:h-[25rem] object-contain shrink-0"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
-
-        {/* Certifications Section */}
-        <section className="py-20 bg-secondary/20">
-          <div className="container">
-            <div className="max-w-6xl mx-auto space-y-12">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
-                  <Award className="w-8 h-8 text-primary" />
-                  {t('about.certifications')}
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {certifications.map((cert, index) => (
-                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300">
-                    <CardContent className="p-4 pb-0">
-                      <img
-                        src={cert.image}
-                        alt={t(`about.certifications_list.${cert.key}.title`)}
-                        className="w-full h-44 object-cover rounded-xl border border-border/60"
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-lg">{t(`about.certifications_list.${cert.key}.title`)}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-1">
-                      <p className="text-sm text-muted-foreground">{t(`about.certifications_list.${cert.key}.issuer`)}</p>
-                      <p className="text-xs text-muted-foreground">{t(`about.certifications_list.${cert.key}.year`)}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
+
+      <Dialog open={Boolean(selectedCertificate)} onOpenChange={(open) => !open && setSelectedCertificate(null)}>
+        <DialogContent className="max-w-3xl">
+          {selectedCertificate && (
+            <>
+              <DialogHeader>
+                <DialogTitle>{t(`about.certifications_list.${selectedCertificate.key}.title`)}</DialogTitle>
+                <DialogDescription>
+                  {t(`about.certifications_list.${selectedCertificate.key}.issuer`)} -{' '}
+                  {t(`about.certifications_list.${selectedCertificate.key}.year`)}
+                </DialogDescription>
+              </DialogHeader>
+              <img
+                src={selectedCertificate.image}
+                alt={t(`about.certifications_list.${selectedCertificate.key}.title`)}
+                className="w-full max-h-[75vh] object-contain rounded-xl border border-border/60"
+              />
+              <div className="flex justify-end">
+                <Button type="button" variant="outline" onClick={() => setSelectedCertificate(null)}>
+                  {t('about.closeCertificate')}
+                </Button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </MainLayout>
   );
 };
