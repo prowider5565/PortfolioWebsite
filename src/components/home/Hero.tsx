@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AutoCarousel } from '@/components/ui/auto-carousel';
 import { ImageLightbox } from '@/components/ui/image-lightbox';
-import { Terminal, Database, Server, Code, ArrowRight, User, Plus, Minus } from 'lucide-react';
+import { Terminal, Database, Server, Code, ArrowRight, User, Plus, Minus, Cloud, Shield, Network, Cpu } from 'lucide-react';
 
 const heroImages = [
   'https://miaoda-conversation-file.s3cdn.medo.dev/user-9nlltn39i22o/conv-9nlm5x2djta8/20260216/file-9nm8vnfi3668.jpg',
@@ -21,7 +21,8 @@ const allSkills = [
   'PostgreSQL',
   'MySQL',
   'MongoDB',
-  'Database ORMs',
+  'SQLAlchemy',
+  'TypeORM',
   'Django REST',
   'FastAPI',
   'Flask',
@@ -39,6 +40,7 @@ const allSkills = [
   'System Administration',
   'Cloud Computing',
   'AWS (EC2, S3, R53)',
+  'Selenium',
   'Microservices',
 ];
 
@@ -52,13 +54,16 @@ const skillLogoSlugMap: Record<string, string> = {
   'Node.js': 'nodedotjs',
   MySQL: 'mysql',
   MongoDB: 'mongodb',
+  SQLAlchemy: 'sqlalchemy',
+  TypeORM: 'typeorm',
   Redis: 'redis',
   RabbitMQ: 'rabbitmq',
   NGINX: 'nginx',
   Docker: 'docker',
   Kubernetes: 'kubernetes',
   Ubuntu: 'ubuntu',
-  'AWS (EC2, S3, R53)': 'amazonwebservices',
+  'AWS (EC2, S3, R53)': 'amazonaws',
+  Selenium: 'selenium',
 };
 
 const getSkillLogoUrl = (skill: string) => {
@@ -75,6 +80,7 @@ export const Hero = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [showAllSkills, setShowAllSkills] = useState(false);
+  const [logoLoadErrors, setLogoLoadErrors] = useState<Record<string, boolean>>({});
 
   const displayedSkills = showAllSkills ? allSkills : initialSkills;
 
@@ -89,6 +95,15 @@ export const Hero = () => {
   const handleImageClick = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  const getFallbackSkillIcon = (skill: string) => {
+    if (skill.includes('AWS') || skill.includes('Cloud')) return Cloud;
+    if (skill.includes('OAuth') || skill.includes('SSL')) return Shield;
+    if (skill.includes('WebSockets') || skill.includes('RabbitMQ') || skill.includes('Microservices')) return Network;
+    if (skill.includes('SQL') || skill.includes('MySQL') || skill.includes('MongoDB') || skill.includes('Redis') || skill.includes('PostgreSQL')) return Database;
+    if (skill.includes('Python') || skill.includes('Node') || skill.includes('Django') || skill.includes('FastAPI') || skill.includes('Flask') || skill.includes('Nest') || skill.includes('Selenium')) return Cpu;
+    return Code;
   };
 
   return (
@@ -132,28 +147,29 @@ export const Hero = () => {
                 </h1>
               </div>
               
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight max-w-[712px] mx-auto md:mx-0">
-                {t('hero.title')}
-              </h3>
             </div>
                         
-<p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto md:mx-0 leading-relaxed">
-  {t('hero.description')}
-</p>
+  <p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto md:mx-0 leading-relaxed">
+    {t('hero.description')}
+  </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               {displayedSkills.map((skill) => (
                 <Badge key={skill} variant="secondary" className="px-4 py-1.5 text-sm bg-secondary/50 border-border hover:bg-primary/20 hover:text-primary transition-all cursor-default">
                   <span className="inline-flex items-center gap-2">
-                    {getSkillLogoUrl(skill) ? (
+                    {getSkillLogoUrl(skill) && !logoLoadErrors[skill] ? (
                       <img
                         src={getSkillLogoUrl(skill) ?? ''}
                         alt={`${skill} logo`}
                         className="w-4 h-4 object-contain"
                         loading="lazy"
+                        onError={() => setLogoLoadErrors((prev) => ({ ...prev, [skill]: true }))}
                       />
                     ) : (
-                      <Code className="w-3.5 h-3.5" />
+                      (() => {
+                        const Icon = getFallbackSkillIcon(skill);
+                        return <Icon className="w-3.5 h-3.5" />;
+                      })()
                     )}
                     {skill}
                   </span>
@@ -194,7 +210,7 @@ export const Hero = () => {
           </div>
 
           {/* Right Image Carousel */}
-          <div className="flex-1 flex justify-center md:justify-end">
+          <div className="w-full md:basis-[42%] lg:basis-[38%] md:shrink-0 flex justify-center md:justify-end">
             <div className="relative group">
               {/* Outer Glows and Decorations */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary to-blue-600 rounded-[2.5rem] blur-2xl opacity-10 group-hover:opacity-30 transition duration-1000" />
