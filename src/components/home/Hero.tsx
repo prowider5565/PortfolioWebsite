@@ -131,14 +131,10 @@ export const Hero = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
           {/* Left Content */}
           <div className="flex-1 space-y-8 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/50 bg-primary/10 text-primary text-sm font-medium animate-pulse">
-              <Terminal className="w-4 h-4" />
-              <span>{t('hero.available')}</span>
-            </div>
+
             
             <div className="space-y-4">
               <div className="space-y-1">
-                <p className="text-primary font-mono tracking-widest uppercase text-sm font-bold ml-1">{t('hero.architect')}</p>
                 <h2 className="text-2xl md:text-3xl font-medium text-foreground/80">
                   {t('hero.fullName')}
                 </h2>
@@ -152,6 +148,10 @@ export const Hero = () => {
   <p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto md:mx-0 leading-relaxed">
     {t('hero.description')}
   </p>
+
+            <p className="text-sm md:text-base text-muted-foreground/90 font-medium max-w-2xl mx-auto md:mx-0">
+              {t('hero.skillsIntro')}
+            </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               {displayedSkills.map((skill) => (
