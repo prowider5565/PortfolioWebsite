@@ -1,0 +1,33 @@
+Construction CRM link: http://77.237.245.47:3401/
+Login credentials for our Live Demo version of the crm
+
+Login: admin
+Password: admin123
+
+Description: My project manages a construction business end-to-end in one system, covering project sites, buildings, apartment sales and contracts, accounting, materials, and workers with role-based access.
+
+It goes beyond CRUD by implementing structured workflows, apartment lifecycle management, contracts and installments, finance and operations (expenses, suppliers, salaries, UZS/USD exchange), analytics with export/PDF reports, and automated Telegram/SMS notifications. The system is production-ready, built with NestJS, PostgreSQL, Redis, React, Docker, authentication, and RBAC.
+
+______________________________________
+POS system link: 
+https://pos-front-v2.vercel.app
+
+Login: admin
+Password: 123123123
+
+
+This project is designed, developed and deployed for local merchants who lead supply-demand business. Features included; debt management for each products or suppliers, product inventory management (FIFO used), sales transaction management, stock management, inventory log tracking, etc.
+
+______________________________________
+
+https://carting.uz
+Carting logistics platform
+carting.uz is an online transport/delivery services resource or platform in Uzbekistan offering a way to manage or book transport/delivery tasks, supported by a companion mobile app.
+
+_________________________
+
+MyMDCard medical information platform
+https://mymdcard.com
+
+
+Developed mymdcard.com, a secure medical records platform using Django REST Framework and React.js. Features include encrypted health data storage, JWT-based authentication with MFA, NFC/QR emergency access, and admin/member dashboards. Optimized for performance with PostgreSQL, caching, and responsive UI. Delivered a HIPAA-oriented, scalable solution for managing and sharing medical data.

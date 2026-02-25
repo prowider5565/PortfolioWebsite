@@ -135,5 +135,32 @@
     "twitter": "Twitter",
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "projectsPage": {
+    "title": "Projects Portfolio",
+    "subtitle": "A curated selection of production-ready systems I designed and delivered across healthcare, logistics, retail, and construction.",
+    "openProject": "Open Project",
+    "demoCredentials": "Live Demo Credentials",
+    "login": "Login",
+    "password": "Password",
+    "technologies": "Technologies",
+    "items": {
+      "constructionCrm": {
+        "title": "Construction CRM",
+        "description": "An end-to-end construction business platform managing sites, buildings, apartment sales, contracts, accounting, materials, and workforce operations with role-based access. Beyond CRUD, it includes apartment lifecycle workflows, installment contract handling, supplier and salary expense tracking, UZS/USD exchange support, analytics with PDF/export reporting, and Telegram/SMS automation. Built for production with NestJS, PostgreSQL, Redis, React, secure authentication, and RBAC."
+      },
+      "posSystem": {
+        "title": "POS System",
+        "description": "A full retail operations platform for local merchants handling inventory, sales, stock flow, and supplier/product debt management. It implements FIFO-based inventory logic, transaction tracking, audit-ready inventory logs, and daily operational reporting for real business usage."
+      },
+      "carting": {
+        "title": "Carting Logistics Platform",
+        "description": "carting.uz is a digital logistics platform in Uzbekistan for booking and managing transport or delivery tasks. It centralizes request flow, service operations, and dispatch coordination, with a companion mobile app for broader user access and field execution."
+      },
+      "mymdcard": {
+        "title": "MyMDCard Medical Platform",
+        "description": "A secure medical information platform built with Django REST Framework and React.js for storing and sharing health data. It includes encrypted records, JWT authentication with MFA, NFC/QR emergency access, and dedicated admin/member dashboards. The system is optimized with PostgreSQL and caching, and designed as a HIPAA-oriented scalable architecture."
+      }
+    }
   }
 }

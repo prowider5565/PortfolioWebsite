@@ -128,9 +128,9 @@ export const Hero = () => {
       />
 
       <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-12">
           {/* Left Content */}
-          <div className="flex-1 space-y-8 text-center md:text-left">
+          <div className="flex-1 min-w-0 text-center md:text-left flex flex-col gap-6 h-full md:min-h-[585px]">
 
             
             <div className="space-y-4">
@@ -195,7 +195,7 @@ export const Hero = () => {
               </Button>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4 mt-auto">
               <Button size="lg" className="h-14 px-10 text-lg font-semibold group rounded-full" asChild>
                 <a href="/projects">
                   {t('hero.viewProjects')}

@@ -19,7 +19,7 @@
     "cleanCode": "Toza Kod",
     "identity": "Shaxs",
     "role": "Dasturiy Ta'minot Arxitektori",
-    "skillsIntro": "Quyidagi texnologiya va ko'nikmalarni puxta egallaganman",
+    "skillsIntro": "Mening qobiliyatlarim va ishlatadigan texnologiyalar",
     "showMoreSkills": "Ko'proq ko'rsatish",
     "showLessSkills": "Kamroq ko'rsatish"
   },
@@ -203,5 +203,32 @@
     "twitter": "Twitter",
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "projectsPage": {
+    "title": "Loyihalar Portfeli",
+    "subtitle": "Sog'liqni saqlash, logistika, savdo va qurilish yo'nalishlarida ishlab chiqilgan va amaliyotga joriy etilgan professional tizimlar to'plami.",
+    "openProject": "Loyihani Ochish",
+    "demoCredentials": "Live Demo Kirish Ma'lumotlari",
+    "login": "Login",
+    "password": "Parol",
+    "technologies": "Texnologiyalar",
+    "items": {
+      "constructionCrm": {
+        "title": "Construction CRM",
+        "description": "Qurilish biznesini to'liq boshqarishga mo'ljallangan platforma: obyektlar, binolar, kvartira savdosi va shartnomalar, buxgalteriya, materiallar hamda ishchilar jarayonlarini role-based access orqali boshqaradi. Oddiy CRUDdan tashqari kvartira lifecycle oqimlari, bo'lib to'lash shartnomalari, ta'minotchi va ish haqi xarajatlari, UZS/USD kursi, PDF/export hisobotlar va Telegram/SMS avtomatlashtirish mavjud. Tizim NestJS, PostgreSQL, Redis, React, xavfsiz autentifikatsiya va RBAC asosida production darajada qurilgan."
+      },
+      "posSystem": {
+        "title": "POS Tizimi",
+        "description": "Mahalliy savdogarlar uchun to'liq savdo platformasi bo'lib, inventar, savdo, stock harakati va ta'minotchi/mahsulot qarzdorligini boshqaradi. FIFO asosidagi inventar logikasi, tranzaksiyalar kuzatuvi, auditga tayyor ombor loglari va kundalik operatsion hisobotlarni ta'minlaydi."
+      },
+      "carting": {
+        "title": "Carting Logistika Platformasi",
+        "description": "carting.uz O'zbekistonda transport va yetkazib berish buyurtmalarini yaratish hamda boshqarish uchun raqamli platforma. U so'rovlar oqimi, xizmat jarayonlari va dispatch koordinatsiyasini markazlashtiradi. Qo'shimcha mobil ilova orqali foydalanuvchi qamrovi va maydondagi ijro imkoniyati kengaytirilgan."
+      },
+      "mymdcard": {
+        "title": "MyMDCard Tibbiy Platformasi",
+        "description": "Django REST Framework va React.js asosida qurilgan xavfsiz tibbiy axborot platformasi bo'lib, sog'liq ma'lumotlarini saqlash va ulashishni ta'minlaydi. Unda shifrlangan ma'lumotlar, MFA bilan JWT autentifikatsiya, NFC/QR favqulodda kirish va admin/member panellari mavjud. PostgreSQL va caching bilan optimallashtirilgan, HIPAA talablari yo'nalishidagi kengaytiriladigan arxitektura sifatida ishlab chiqilgan."
+      }
+    }
   }
 }
