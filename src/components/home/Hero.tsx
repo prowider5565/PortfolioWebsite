@@ -42,6 +42,33 @@ const allSkills = [
   'Microservices',
 ];
 
+const skillLogoSlugMap: Record<string, string> = {
+  Python: 'python',
+  'Django REST': 'django',
+  FastAPI: 'fastapi',
+  Flask: 'flask',
+  PostgreSQL: 'postgresql',
+  'Nest.js': 'nestjs',
+  'Node.js': 'nodedotjs',
+  MySQL: 'mysql',
+  MongoDB: 'mongodb',
+  Redis: 'redis',
+  RabbitMQ: 'rabbitmq',
+  NGINX: 'nginx',
+  Docker: 'docker',
+  Kubernetes: 'kubernetes',
+  Ubuntu: 'ubuntu',
+  'AWS (EC2, S3, R53)': 'amazonwebservices',
+};
+
+const getSkillLogoUrl = (skill: string) => {
+  const slug = skillLogoSlugMap[skill];
+  if (!slug) {
+    return null;
+  }
+  return `https://cdn.simpleicons.org/${slug}`;
+};
+
 export const Hero = () => {
   const { t } = useTranslation();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -117,7 +144,19 @@ export const Hero = () => {
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               {displayedSkills.map((skill) => (
                 <Badge key={skill} variant="secondary" className="px-4 py-1.5 text-sm bg-secondary/50 border-border hover:bg-primary/20 hover:text-primary transition-all cursor-default">
-                  {skill}
+                  <span className="inline-flex items-center gap-2">
+                    {getSkillLogoUrl(skill) ? (
+                      <img
+                        src={getSkillLogoUrl(skill) ?? ''}
+                        alt={`${skill} logo`}
+                        className="w-4 h-4 object-contain"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Code className="w-3.5 h-3.5" />
+                    )}
+                    {skill}
+                  </span>
                 </Badge>
               ))}
               <Button
