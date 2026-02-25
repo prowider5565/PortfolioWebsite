@@ -76,9 +76,6 @@ export const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="default" size="sm" className="hidden lg:flex">
-            {t('nav.hireMe')}
-          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -121,9 +118,6 @@ export const Navbar = () => {
                     {t(item.name)}
                   </a>
                 ))}
-                <Button variant="default" className="mt-4">
-                  {t('nav.hireMe')}
-                </Button>
               </div>
             </SheetContent>
           </Sheet>
