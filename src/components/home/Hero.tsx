@@ -113,7 +113,7 @@ export const Hero = () => {
       />
 
       <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
           {/* Left Content */}
           <div className="flex-1 space-y-8 text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/50 bg-primary/10 text-primary text-sm font-medium animate-pulse">
@@ -132,14 +132,14 @@ export const Hero = () => {
                 </h1>
               </div>
               
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight max-w-[712px] mx-auto md:mx-0">
                 {t('hero.title')}
               </h3>
             </div>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0 leading-relaxed">
-              {t('hero.description')}
-            </p>
+                        
+<p className="text-lg md:text-xl text-muted-foreground max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto md:mx-0 leading-relaxed">
+  {t('hero.description')}
+</p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               {displayedSkills.map((skill) => (
@@ -191,20 +191,6 @@ export const Hero = () => {
               </Button>
             </div>
 
-            <div className="flex items-center justify-center md:justify-start gap-8 pt-10 opacity-60">
-              <div className="flex items-center gap-2 group cursor-help">
-                <Server className="w-5 h-5 group-hover:text-primary transition-colors" />
-                <span className="text-sm font-medium">{t('hero.backendArchitecture')}</span>
-              </div>
-              <div className="flex items-center gap-2 group cursor-help">
-                <Database className="w-5 h-5 group-hover:text-primary transition-colors" />
-                <span className="text-sm font-medium">{t('hero.dataIntegrity')}</span>
-              </div>
-              <div className="flex items-center gap-2 group cursor-help">
-                <Code className="w-5 h-5 group-hover:text-primary transition-colors" />
-                <span className="text-sm font-medium">{t('hero.cleanCode')}</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Image Carousel */}
